@@ -1,0 +1,148 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+    <form id="form" role="form">
+        <div class="well">Fill out the form and click the submit button when complete...</div>
+        <div class="formContainer">
+            <div class="formContainerColumn">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">User:</div>
+                    <div class="panel-body userContainer">
+                        <div class="form-group">
+                            <label for="usernameInput" class="control-label">Username:</label>
+                            <input type="text" class="form-control" id="usernameInput"
+                                    placeholder="Type username..." />
+                        </div>
+                        <div class="form-group">
+                            <label for="firstnameInput" class="control-label">First name:</label>
+                            <input type="text" class="form-control" id="firstnameInput"
+                                    placeholder="Type first name..." />
+                        </div>
+                        <div class="form-group">
+                            <label for="lastnameInput" class="control-label">Last name:</label>
+                            <input type="text" class="form-control" id="lastnameInput"
+                                    placeholder="Type last name..." />
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Contact:</div>
+                    <div class="panel-body">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-earphone"></span>
+                            </div>
+                            <input type="text" class="form-control" id="phoneInput" placeholder="Type phone#" />
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-print"></span>
+                            </div>
+                            <input type="text" class="form-control" id="faxInput" placeholder="Type fax#" />
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </div>
+                            <input type="text" class="form-control" id="emailInput" placeholder="Type e-mail" />
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Schedule:</div>
+                    <div class="panel-body">
+                        <div class="container-fluid schedulePanel">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <label for="adultsInput">Adults:</label>
+                                    <select id="adultsInput" class="form-control">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <label for="checkInInput">Check-In:</label>
+                                    <input id="checkInInput" class="form-control" type="date" />
+                                </div>
+                                <div class="col-xs-6">
+                                    <label for="checkOutInput">Check-Out:</label>
+                                    <input id="checkOutInput" class="form-control" type="date" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <label for="daysOutput">Days:</label>
+                                    <input id="daysOutput" class="form-control" type="text" disabled
+                                        placeholder="Displays days..." />
+                                </div>
+                                <div class="col-xs-6">
+                                    <label for="costOutput">Cost($):</label>
+                                    <input id="costOutput" class="form-control" type="text" disabled
+                                        placeholder="Displays cost..." />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formContainerColumn panel panel-primary">
+                <div class="panel-heading">Other:</div>
+                <div class="panel-body otherPanel">
+                    <label for="messageInput">Message:</label>
+                    <textarea class="form-control" placeholder="Type message here..."></textarea>
+                    <label for="rangeInput">Range:</label>
+                    <input id="rangeInput" type="range" min="0" max="10" />
+                    <label for="priorityInput">Priority:</label>
+                    <div>
+                        <label class="radio-inline">
+                            <input type="radio" name="priorityInput" />
+                            Low
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="priorityInput" />
+                            Med
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="priorityInput" />
+                            High
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="bottomButtons">
+            <button id="resetButton" type="reset" class="btn btn-primary">
+                <i class="fa-sharp fa-solid fa-eraser"></i>
+                Reset
+            </button>
+            <button id="submitButton" type="submit" class="btn btn-success">
+                <i class="fa-sharp fa-solid fa-paper-plane"></i>
+                Submit
+            </button>
+        </div>
+    </form>
+</body>
+
+</html>

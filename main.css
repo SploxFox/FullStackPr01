@@ -1,0 +1,50 @@
+.panel {
+    margin: 0
+}
+
+.userContainer .form-group {
+    display: flex;
+}
+
+.userContainer .form-group > :first-child {
+    flex: 1;
+}
+
+.userContainer .form-group > :nth-child(2) {
+    flex: 1.1;
+}
+
+.otherPanel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.otherPanel > textarea {
+    flex-grow: 1;
+}
+
+.schedulePanel {
+    margin: 0 -15px;
+}
+
+.formContainer {
+    display: flex;
+    gap: 15px;
+}
+
+.formContainerColumn {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.formContainerColumn:not(.panel) {
+    gap: 15px;
+}
+
+.bottomButtons {
+    display: flex;
+    justify-content: right;
+    gap: 15px
+}
